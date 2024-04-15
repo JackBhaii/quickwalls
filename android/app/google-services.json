@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "32228878640",
+    "project_id": "quickwalls-1ed18",
+    "storage_bucket": "quickwalls-1ed18.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32228878640:android:997bda58075712948280f5",
+        "android_client_info": {
+          "package_name": "com.quickwalls.com.quickwalls"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVchUQPu6YK8vg_gww11msKZYI3085Wyc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
