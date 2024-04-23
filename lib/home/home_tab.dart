@@ -8,6 +8,7 @@ import 'package:quickwalls/home/favorite.dart';
 import 'package:quickwalls/home/photo_details.dart';
 import 'package:quickwalls/home/privacy_policy.dart';
 import 'package:quickwalls/home/report_issue.dart';
+import 'package:quickwalls/login/login.dart';
 
 
 class HomeTab extends StatefulWidget {
@@ -18,6 +19,7 @@ class HomeTab extends StatefulWidget {
 }
 
 class _HomeTabState extends State<HomeTab> {
+
   HomeController homeController = Get.find();
   final _advancedDrawerController = AdvancedDrawerController();
   int index = 0;
@@ -286,6 +288,7 @@ class _HomeTabState extends State<HomeTab> {
                 child: InkWell(
                   onTap: () {
                     index = 5;
+                    Get.offAll(Login());
                     setState(() {});
                   },
                   borderRadius: const BorderRadius.only(

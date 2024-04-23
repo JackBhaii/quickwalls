@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_wallpaper_manager/flutter_wallpaper_manager.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:flutter_file_downloader/flutter_file_downloader.dart';
 
 class PhotosDetails extends StatefulWidget {
   final dynamic details;
@@ -87,22 +90,16 @@ class _PhotosDetailsState extends State<PhotosDetails> {
                 alignment: Alignment.bottomRight,
                 child: InkWell(
                   onTap: () async {
-                    // try {
-                    //   // Saved with this method.
-                    //   var imageId = await ImageDownloader.downloadImage(imgUrl);
-                    //   if (imageId == null) {
-                    //     return;
-                    //   }
-                    //
-                    //   // Below is a method of obtaining saved image information.
-                    //   var fileName = await ImageDownloader.findName(imageId);
-                    //   var path = await ImageDownloader.findPath(imageId);
-                    //   var size = await ImageDownloader.findByteSize(imageId);
-                    //   var mimeType =
-                    //       await ImageDownloader.findMimeType(imageId);
-                    // } on PlatformException catch (error) {
-                    //   print(error);
-                    // }
+                    FileDownloader.downloadFile(
+                      url: imgUrl,
+                      onDownloadError: (errorMessage) {
+                        print('Download Error');
+                      },
+                      onDownloadCompleted: (path) {
+                        final File file = File(path);
+                        print('Download Done');
+                      },
+                    );
                   },
                   child: Image.asset(
                     'assets/img/icon_download.png',

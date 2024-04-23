@@ -1,12 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:get/get.dart';
 import 'package:quickwalls/controller/home_controller.dart';
-import 'package:quickwalls/home/home_tab.dart';
 
-import '../constant/vars.dart';
 
 class CategoriesTab extends StatefulWidget {
   const CategoriesTab({super.key});
@@ -15,17 +12,30 @@ class CategoriesTab extends StatefulWidget {
   State<CategoriesTab> createState() => _CategoriesTabState();
 }
 
+
 class _CategoriesTabState extends State<CategoriesTab> {
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    homeController.getDogImg();
+    // collections.add({'title': 'Dogs', 'img': homeController.dogList[0]['message']},);
+
+  }
+
+
   List<Map<String, dynamic>> collections = [
     {'title': 'Sport', 'img': 'assets/img/smample_img18.jpg'},
     {'title': 'Nature', 'img': 'assets/img/nature_wallpaper.jpg'},
-    {'title': 'Animal', 'img': 'assets/img/animals_wallpaper.jpg'},
+    {'title': 'Dogs', 'img': 'assets/img/animals_wallpaper.jpg'},
     {'title': 'Food', 'img': 'assets/img/food_wallpaper.jpg'},
     {'title': 'Travel', 'img': 'assets/img/travel_wallpaper.jpg'},
     {'title': 'Aesthetic', 'img': 'assets/img/aesthetics_wallpapers.jpg'},
     {'title': 'AstroPhotography', 'img': 'assets/img/astro_wallpaper.jpg'},
   ];
   HomeController homeController =Get.find();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +52,6 @@ class _CategoriesTabState extends State<CategoriesTab> {
               'Collections',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
-
             Expanded(
               child: ListView.builder(
                 itemCount: collections.length,

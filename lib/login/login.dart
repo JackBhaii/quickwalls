@@ -73,9 +73,7 @@ class _LoginState extends State<Login> {
                 SizedBox(
                   height: 50,
                   child: ElevatedButton(
-                    onPressed: () {
-                    // Get.to(HomePage(),binding: BindingController());
-                  },
+                   onPressed: () {},
                   style: const ButtonStyle(
                     backgroundColor: MaterialStatePropertyAll(Colors.transparent)
                   ),

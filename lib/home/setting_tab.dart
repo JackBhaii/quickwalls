@@ -1,9 +1,11 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
+
 import '../controller/home_controller.dart';
+
 
 class SettingTab extends StatefulWidget {
   const SettingTab({super.key});
@@ -39,9 +41,11 @@ class _SettingTabState extends State<SettingTab> {
               height: Get.height * 0.02,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              padding:  EdgeInsets.symmetric(vertical: 8.0),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+
+                },
                 child: Row(
                   children: [
                     Image.asset(
