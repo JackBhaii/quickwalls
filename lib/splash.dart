@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:quickwalls/login/login.dart';
 import 'package:quickwalls/onboard.dart';
+
+import 'home/home.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -10,13 +14,25 @@ class Splash extends StatefulWidget {
 }
 class _SplashState extends State<Splash> {
 
+  final box = GetStorage();
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     Future.delayed(Duration(seconds: 2),
     () {
-      Get.to(OnBoard());
+      if(box.read('onBoarding')??false){
+        if(box.read('IsLogin')??false){
+          Get.to(HomePage());
+        } else{
+          Get.to(Login());
+        }
+
+      }else{
+        Get.to(OnBoard());
+      }
+
     },
     );
   }

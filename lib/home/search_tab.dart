@@ -23,6 +23,8 @@ class _SearchTabState extends State<SearchTab> with TickerProviderStateMixin {
   HomeController homeController =Get.find();
   late TabController tabController;
 
+  bool isCancel = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,27 +37,27 @@ class _SearchTabState extends State<SearchTab> with TickerProviderStateMixin {
             SizedBox(
               height: Get.height * 0.06,
             ),
+          Text(
+            'Search',
+            style: TextStyle(fontSize: 20),
+          ),
+
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Search',
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    Text(
-                      searchText,
-                      // maxLines: 2,
-                      style: const TextStyle(
-                        fontSize: 12,
-                        color: Color(0xff9D9D9D),
-                        overflow: TextOverflow.clip,
-                      ),
-                    )
-                  ],
+                Text(
+                  searchText,
+                  // maxLines: 2,
+                  style: const TextStyle(
+                    fontSize: 12,
+                    color: Color(0xff9D9D9D),
+                    overflow: TextOverflow.clip,
+                  ),
                 ),
-                Expanded(
+                InkWell(
+                  onTap: () {
+
+                  },
                   child: Container(
                       margin: const EdgeInsets.symmetric(horizontal: 8),
                       padding: const EdgeInsets.all(8),

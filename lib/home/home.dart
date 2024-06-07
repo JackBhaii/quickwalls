@@ -6,7 +6,7 @@ import 'package:quickwalls/controller/home_controller.dart';
 import 'package:quickwalls/home/categories_tab.dart';
 import 'package:quickwalls/home/home_tab.dart';
 import 'package:quickwalls/home/search_tab.dart';
-import 'package:quickwalls/home/setting_tab.dart';
+import 'package:quickwalls/home/setting/setting_tab.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

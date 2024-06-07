@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:quickwalls/controller/binding_controller.dart';
 import 'package:quickwalls/home/home.dart';
 import 'package:quickwalls/login/email_login.dart';
 import 'package:quickwalls/login/sing_in.dart';
+
+import '../home/home_tab.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -73,7 +76,11 @@ class _LoginState extends State<Login> {
                 SizedBox(
                   height: 50,
                   child: ElevatedButton(
-                   onPressed: () {},
+                   onPressed: () {
+                     final storage = GetStorage();
+                     storage.write('IsLogin', true);
+                     Get.to(HomePage(),binding: BindingController());
+                   },
                   style: const ButtonStyle(
                     backgroundColor: MaterialStatePropertyAll(Colors.transparent)
                   ),

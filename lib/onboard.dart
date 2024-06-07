@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:quickwalls/home/home.dart';
 import 'package:quickwalls/login/login.dart';
 
@@ -45,7 +46,6 @@ List<Map<String,dynamic>> sliderList = [];
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-
         children: [
           PageView.builder(
             controller: pageController,
@@ -127,6 +127,7 @@ List<Map<String,dynamic>> sliderList = [];
                     ),
                   ),
                   SizedBox(height: 30,),
+
                   currentPage!=2?
                   InkWell(
                     onTap: () {
@@ -150,6 +151,8 @@ List<Map<String,dynamic>> sliderList = [];
                   ) :
                   InkWell(
                     onTap: () {
+                      final storage = GetStorage();
+                      storage.write('onBoarding', true);
                       Get.to(Login());
                     },
                     borderRadius: BorderRadius.circular(20),
